@@ -82,12 +82,13 @@ def train_model(df,X,y):
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42
     )
-    print("definig the features and Spliting data done ")
+    print("defining the features and Splitting data done ")
 
     model=LinearRegression()
-    print("model tranig started")
+    print("model training started")
     model.fit(X_train, y_train)
-    print("Tranig is done ")
+    print("Training is done ")
     print("Model is Ready to Predict")
     y_pred = model.predict(X_test)
     return df,model,y_test,y_pred
+

@@ -49,8 +49,7 @@ def explore(df):
             
     display(df)
     import matplotlib.pyplot as plt
-    plt.savefig(BASE_DIR / "price_distribution.png", bbox_inches='tight')
-    plt.close()
+    
 
     import numpy as np
     numeric_columns = df.select_dtypes(include=np.number).columns.tolist()
@@ -61,8 +60,8 @@ def explore(df):
     plt.hist(df[column_to_plot].dropna(), bins=20,range=(0,150000), edgecolor="black")
     plt.title(f"Distribution of {column_to_plot}")
     plt.xlabel(column_to_plot)
-
     plt.grid(alpha=0.25)
+    plt.savefig(BASE_DIR / "price_distribution.png", bbox_inches='tight')
     plt.show()
     feature_for_plot = "milage"
     target_for_plot = "price"  
@@ -73,6 +72,7 @@ def explore(df):
     plt.xlabel(feature_for_plot)
     plt.ylabel(target_for_plot)
     plt.grid(alpha=0.25)
+    plt.savefig(BASE_DIR / "price_vs_milage.png", bbox_inches='tight')
     plt.show()
 
     print("Available columns:", df.columns.tolist())

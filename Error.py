@@ -1,4 +1,4 @@
-
+from config import save_plot
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import r2_score 
@@ -30,6 +30,7 @@ def evaluate_model(y_test, y_pred, X, model, comparison):
     plt.ylabel("Predicted Price")
     plt.title("Actual vs Predicted Car Prices")
     plt.grid(alpha=0.3)
+    save_plot("actual_vs_predicted.png")
     plt.show()
     plt.figure(figsize=(8, 5))
     plt.hist(error_df["Prediction Error"], bins=30, edgecolor="black")
@@ -37,6 +38,7 @@ def evaluate_model(y_test, y_pred, X, model, comparison):
     plt.ylabel("Frequency")
     plt.title("Distribution of Prediction Errors")
     plt.grid(alpha=0.3)
+    save_plot("error_distribution.png")
     plt.show()
     importance = pd.DataFrame({
      'Features': X.columns,
@@ -63,7 +65,6 @@ def evaluate_model(y_test, y_pred, X, model, comparison):
     plt.title("Feature Importance Ranking")
     plt.gca().invert_yaxis()
     plt.tight_layout()
+    save_plot("feature_importance.png")
     plt.show()
-   
-
     return mae, mse, rmse, r2,error_df,importance

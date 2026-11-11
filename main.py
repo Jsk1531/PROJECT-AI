@@ -5,8 +5,8 @@ import pandas as pd
 from config import OUTPUT_DIR, save_table
 from Data_Preprocessing import load_data, clean_data, explore
 from training import add_features, train_model
-from predict import predict_model
-from error import evaluate_model
+from Predict import predict_model
+from Error import evaluate_model
 
 
 class Tee:

@@ -108,11 +108,7 @@ Car details:
    brand_value  model_year  milage  horsepower  displacement_l  cylinders  is_turbo  is_electric
 0        20000        2018   50000         200             2.0          4         0            0
 Predicted Used-Car Price: $24,164.07
-Do you want to predict the price of another car? Enter 1 for Yes, 0 for No: Enter the car details for prediction:
-Brand value: Model year: Mileage: Horsepower: Engine displacement in litres: Number of cylinders: Turbo engine? Enter 1 for Yes, 0 for No: Electric car? Enter 1 for Yes, 0 for No: 
-Predicted Used-Car Price: $408,378.18
-Do you want to predict the price of another car? Enter 1 for Yes, 0 for No: Saved table: C:\Users\sarit\Desktop\New folder\PROJECT-AI\outputs\extra_car_predictions.csv
-MAE  : 12,697.212
+Do you want to predict the price of another car? Enter 1 for Yes, 0 for No: MAE  : 12,697.212
 MSE  : 401,797,806.862
 RMSE : 20,044.895
 R²   : 0.601

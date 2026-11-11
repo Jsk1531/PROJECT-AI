@@ -127,6 +127,8 @@ When prompted, enter numerical values for:
 | Turbo engine | `0` for No, `1` for Yes |
 | Electric car | `0` for No, `1` for Yes |
 
+NOTE: All the entered values should be reasonable for an appropriate prediction 
+
 ## Results
 
 The final workflow evaluates predictions against the actual test-set prices and examines the distribution of prediction errors.

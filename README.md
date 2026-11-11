@@ -135,7 +135,8 @@ The final workflow evaluates predictions against the actual test-set prices and 
 
 #### Price distribution
 
-![Price distribution](price_distribution.png)
+![Price distribution]<img width="2262" height="1407" alt="price_distribution" src="https://github.com/user-attachments/assets/24f1f304-f020-4000-bb64-f118d7ed2a1c" />
+
 
 #### Price versus mileage
 

@@ -74,8 +74,8 @@ max    2024.000000  405000.000000  2.954083e+06  1020.000000        8.400000    
 
 [4009 rows x 18 columns]
 Numeric columns: ['model_year', 'milage', 'price', 'horsepower', 'displacement_l', 'cylinders', 'is_turbo', 'is_electric', 'brand_value']
-Saved plot: C:\Users\sarit\Desktop\New folder\PROJECT-AI\outputs\price_distribution.png
-Saved plot: C:\Users\sarit\Desktop\New folder\PROJECT-AI\outputs\price_vs_milage.png
+Saved plot: C:\Users\sarit\PROJECT-AI\outputs\price_distribution.png
+Saved plot: C:\Users\sarit\PROJECT-AI\outputs\price_vs_milage.png
 Available columns: ['brand', 'model', 'model_year', 'milage', 'fuel_type', 'engine', 'transmission', 'ext_col', 'int_col', 'accident', 'clean_title', 'price', 'horsepower', 'displacement_l', 'cylinders', 'is_turbo', 'is_electric', 'brand_value']
 Target: price
 Features: ['model_year', 'milage']
@@ -103,7 +103,7 @@ Model is Ready to Predict
 7        7600.0     -9358.057324                16958.057324
 8       17500.0     21890.005911                -4390.005911
 9       21900.0     33442.333446               -11542.333446
-Saved table: C:\Users\sarit\Desktop\New folder\PROJECT-AI\outputs\new_car_prediction.csv
+Saved table: C:\Users\sarit\PROJECT-AI\outputs\new_car_prediction.csv
 Car details:
    brand_value  model_year  milage  horsepower  displacement_l  cylinders  is_turbo  is_electric
 0        20000        2018   50000         200             2.0          4         0            0
@@ -114,19 +114,59 @@ RMSE : 20,044.895
 R²   : 0.601
 
 ACTUAL VS PREDICTED PRICES
-      Actual Price  Predicted Price  Prediction Error  Absolute Error
-151        35645.0     56059.404453     -20414.404453    20414.404453
-1043       93999.0     67303.258559      26695.741441    26695.741441
-1308       36000.0     25810.561134      10189.438866    10189.438866
-736        20708.0     34886.007743     -14178.007743    14178.007743
-334        37405.0     37977.905245       -572.905245      572.905245
-874        56900.0     57102.383703       -202.383703      202.383703
-3193       49900.0     52894.783607      -2994.783607     2994.783607
-418         7600.0     -9358.057324      16958.057324    16958.057324
-2917       17500.0     21890.005911      -4390.005911     4390.005911
-3181       21900.0     33442.333446     -11542.333446    11542.333446
-Saved plot: C:\Users\sarit\Desktop\New folder\PROJECT-AI\outputs\actual_vs_predicted.png
-Saved plot: C:\Users\sarit\Desktop\New folder\PROJECT-AI\outputs\error_distribution.png
+      Actual Price  Predicted Price  Prediction Error  Absolute Error  Percentage Error
+151        35645.0     56059.404453     -20414.404453    20414.404453         57.271439
+1043       93999.0     67303.258559      26695.741441    26695.741441         28.400027
+1308       36000.0     25810.561134      10189.438866    10189.438866         28.303997
+736        20708.0     34886.007743     -14178.007743    14178.007743         68.466331
+334        37405.0     37977.905245       -572.905245      572.905245          1.531627
+874        56900.0     57102.383703       -202.383703      202.383703          0.355683
+3193       49900.0     52894.783607      -2994.783607     2994.783607          6.001570
+418         7600.0     -9358.057324      16958.057324    16958.057324        223.132333
+2917       17500.0     21890.005911      -4390.005911     4390.005911         25.085748
+3181       21900.0     33442.333446     -11542.333446    11542.333446         52.704719
+
+PERCENTAGE ERROR
+      Actual Price  Predicted Price  Percentage Error
+151        35645.0     56059.404453         57.271439
+1043       93999.0     67303.258559         28.400027
+1308       36000.0     25810.561134         28.303997
+736        20708.0     34886.007743         68.466331
+334        37405.0     37977.905245          1.531627
+874        56900.0     57102.383703          0.355683
+3193       49900.0     52894.783607          6.001570
+418         7600.0     -9358.057324        223.132333
+2917       17500.0     21890.005911         25.085748
+3181       21900.0     33442.333446         52.704719
+
+BEST PREDICTIONS
+      Actual Price  Predicted Price  Prediction Error  Absolute Error  Percentage Error
+2438       33531.0     33542.122364        -11.122364       11.122364          0.033170
+1940       52500.0     52452.467656         47.532344       47.532344          0.090538
+1155       20499.0     20435.984800         63.015200       63.015200          0.307406
+1298       12000.0     12114.759095       -114.759095      114.759095          0.956326
+2690       19000.0     18882.952730        117.047270      117.047270          0.616038
+
+WORST PREDICTIONS
+      Actual Price  Predicted Price  Prediction Error  Absolute Error  Percentage Error
+3537      215000.0     57916.419793     157083.580207   157083.580207         73.062130
+2778      239991.0    115033.050882     124957.949118   124957.949118         52.067765
+3925      193063.0     74586.328034     118476.671966   118476.671966         61.366845
+855       115000.0     -2584.489411     117584.489411   117584.489411        102.247382
+1845      172900.0     57684.763917     115215.236083   115215.236083         66.636921
+      Actual Price  Predicted Price  Prediction Error  Absolute Error  Percentage Error
+151        35645.0     56059.404453     -20414.404453    20414.404453         57.271439
+1043       93999.0     67303.258559      26695.741441    26695.741441         28.400027
+1308       36000.0     25810.561134      10189.438866    10189.438866         28.303997
+736        20708.0     34886.007743     -14178.007743    14178.007743         68.466331
+334        37405.0     37977.905245       -572.905245      572.905245          1.531627
+874        56900.0     57102.383703       -202.383703      202.383703          0.355683
+3193       49900.0     52894.783607      -2994.783607     2994.783607          6.001570
+418         7600.0     -9358.057324      16958.057324    16958.057324        223.132333
+2917       17500.0     21890.005911      -4390.005911     4390.005911         25.085748
+3181       21900.0     33442.333446     -11542.333446    11542.333446         52.704719
+Saved plot: C:\Users\sarit\PROJECT-AI\outputs\actual_vs_predicted.png
+Saved plot: C:\Users\sarit\PROJECT-AI\outputs\error_distribution.png
          Features    Importance  Absolute Importance
 6        is_turbo  10931.952462         10931.952462
 7     is_electric   4562.306161          4562.306161
@@ -136,10 +176,10 @@ Saved plot: C:\Users\sarit\Desktop\New folder\PROJECT-AI\outputs\error_distribut
 3      horsepower     81.879085            81.879085
 0     brand_value      0.441503             0.441503
 2          milage     -0.179606             0.179606
-Saved plot: C:\Users\sarit\Desktop\New folder\PROJECT-AI\outputs\feature_importance.png
-Saved table: C:\Users\sarit\Desktop\New folder\PROJECT-AI\outputs\model_metrics.csv
-Saved table: C:\Users\sarit\Desktop\New folder\PROJECT-AI\outputs\predictions_comparison.csv
-Saved table: C:\Users\sarit\Desktop\New folder\PROJECT-AI\outputs\actual_vs_predicted.csv
-Saved table: C:\Users\sarit\Desktop\New folder\PROJECT-AI\outputs\feature_importance.csv
+Saved plot: C:\Users\sarit\PROJECT-AI\outputs\feature_importance.png
+Saved table: C:\Users\sarit\PROJECT-AI\outputs\model_metrics.csv
+Saved table: C:\Users\sarit\PROJECT-AI\outputs\predictions_comparison.csv
+Saved table: C:\Users\sarit\PROJECT-AI\outputs\actual_vs_predicted.csv
+Saved table: C:\Users\sarit\PROJECT-AI\outputs\feature_importance.csv
 
-All outputs saved in: C:\Users\sarit\Desktop\New folder\PROJECT-AI\outputs
+All outputs saved in: C:\Users\sarit\PROJECT-AI\outputs

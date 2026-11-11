@@ -17,12 +17,26 @@ def evaluate_model(y_test, y_pred, X, model, comparison):
     print(f"RMSE : {rmse:,.3f}")
     print(f"R²   : {r2:.3f}")
     error_df = pd.DataFrame({
-    "Actual Price": y_test,
-    "Predicted Price": y_pred,
-    "Prediction Error": y_test - y_pred,
-    "Absolute Error": np.abs(y_test - y_pred)
+        "Actual Price": y_test,
+        "Predicted Price": y_pred,
+        "Prediction Error": y_test - y_pred,
+        "Absolute Error": np.abs(y_test - y_pred)
     })
+    error_df["Percentage Error"] = (
+        np.abs(y_test - y_pred) / np.abs(y_test)
+    ) * 100
+
     print("\nACTUAL VS PREDICTED PRICES")
+    print(error_df.head(10))
+
+    print("\nPERCENTAGE ERROR")
+    print(error_df[["Actual Price", "Predicted Price", "Percentage Error"]].head(10))
+
+    print("\nBEST PREDICTIONS")
+    print(error_df.nsmallest(5, "Absolute Error"))
+
+    print("\nWORST PREDICTIONS")
+    print(error_df.nlargest(5, "Absolute Error"))
     print(error_df.head(10))
     plt.figure(figsize=(8, 5))
     plt.scatter(y_test, y_pred, alpha=0.5)

@@ -81,6 +81,12 @@ python -m venv venv
 - **Git Bash on Windows:** `source venv/Scripts/activate`
 - **macOS/Linux:** `source venv/bin/activate`
 
+### If it does not activate, Then use this prior to 2nd command 
+
+```bash
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
+
 ### 3. Install the libraries
 
 ```bash

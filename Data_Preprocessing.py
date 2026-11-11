@@ -32,23 +32,23 @@ def clean_data(df):
 def explore(df):
     print("Dataset shape:", df.shape)
     print(df.head())
-    from IPython.display import display
+    
 
     print("Dataset dimensions:", df.shape)
     print("\nColumn names:")
     print(df.columns.tolist())
 
     print("\nFirst five rows:")
-    display(df.head())
+    print(df.head())
 
     print("\nData types and missing-value overview:")
     df.info()
 
     print("\nSummary of numeric columns:")
-    display(df.describe())
+    print(df.describe())
                
             
-    display(df)
+    print(df)
     import matplotlib.pyplot as plt
     
 
@@ -92,6 +92,6 @@ def explore(df):
     else:
         print("Target:", target_column)
         print("Features:", feature_columns)
-        display(df[[target_column]+ feature_columns].describe())
+        print(df[[target_column]+ feature_columns].describe())
 if __name__ == "__main__":
     explore(clean_data(load_data()))

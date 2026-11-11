@@ -1,0 +1,2 @@
+brand_value,model_year,milage,horsepower,displacement_l,cylinders,is_turbo,is_electric,predicted_price
+50000.0,2018,40004.0,250.0,300.0,3.0,1,0,408378.17547887284

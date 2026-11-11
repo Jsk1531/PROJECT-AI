@@ -4,4 +4,3 @@ joblib==1.6.0
 scikit.learn==1.9.1
 matplotlib
 seaborn==0.13.2
-pathlib==1.0.1

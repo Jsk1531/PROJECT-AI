@@ -1,4 +1,5 @@
 from pathlib import Path
+from config import save_plot
 import pandas as pd
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -61,7 +62,7 @@ def explore(df):
     plt.title(f"Distribution of {column_to_plot}")
     plt.xlabel(column_to_plot)
     plt.grid(alpha=0.25)
-    plt.savefig(BASE_DIR / "price_distribution.png", bbox_inches='tight')
+    save_plot("price_distribution.png")
     plt.show()
     feature_for_plot = "milage"
     target_for_plot = "price"  
@@ -72,7 +73,7 @@ def explore(df):
     plt.xlabel(feature_for_plot)
     plt.ylabel(target_for_plot)
     plt.grid(alpha=0.25)
-    plt.savefig(BASE_DIR / "price_vs_milage.png", bbox_inches='tight')
+    save_plot("price_vs_milage.png")
     plt.show()
 
     print("Available columns:", df.columns.tolist())

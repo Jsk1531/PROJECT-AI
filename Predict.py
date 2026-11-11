@@ -1,7 +1,7 @@
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from config import save_table
 import pandas as pd
-
 
 def predict_model(df, X, y, model):
   
@@ -9,7 +9,6 @@ def predict_model(df, X, y, model):
         X, y, test_size=0.2, random_state=42
     )
 
-    
     model.fit(X_train, y_train)
 
     y_pred = model.predict(X_test)
@@ -33,39 +32,53 @@ def predict_model(df, X, y, model):
     })
 
     predicted_price = model.predict(new_car)[0]
-
+    result_df = new_car.copy()
+    result_df["predicted_price"] = predicted_price
+    save_table(result_df, "new_car_prediction.csv")
     print("Car details:")
     print(new_car)
 
     print(f"Predicted Used-Car Price: ${predicted_price:,.2f}")
     
     
-    
-    print("Enter the car details for prediction:")
-    brand_value = float(input("Brand value: "))
-    model_year = int(input("Model year: "))
-    milage = float(input("Mileage: "))
-    horsepower = float(input("Horsepower: "))
-    displacement_l = float(input("Engine displacement in litres: "))
-    cylinders = float(input("Number of cylinders: "))
-    is_turbo = int(input("Turbo engine? Enter 1 for Yes, 0 for No: "))
-    is_electric = int(input("Electric car? Enter 1 for Yes, 0 for No: "))
+    extra_predictions = []
 
-    new_car = pd.DataFrame({
-        "brand_value": [brand_value],
-        "model_year": [model_year],
-        "milage": [milage],
-        "horsepower": [horsepower],
-        "displacement_l": [displacement_l],
-        "cylinders": [cylinders],
-        "is_turbo": [is_turbo],
-        "is_electric": [is_electric]
-    })
+    while True:
+        choice = input("Do you want to predict the price of another car? Enter 1 for Yes, 0 for No: ").strip()
+        if choice != "1":
+            break
 
+        print("Enter the car details for prediction:")
+        brand_value = float(input("Brand value: "))
+        model_year = int(input("Model year: "))
+        milage = float(input("Mileage: "))
+        horsepower = float(input("Horsepower: "))
+        displacement_l = float(input("Engine displacement in litres: "))
+        cylinders = float(input("Number of cylinders: "))
+        is_turbo = int(input("Turbo engine? Enter 1 for Yes, 0 for No: "))
+        is_electric = int(input("Electric car? Enter 1 for Yes, 0 for No: "))
 
-    predicted_price = model.predict(new_car)[0]
+        new_car = pd.DataFrame({
+            "brand_value": [brand_value],
+            "model_year": [model_year],
+            "milage": [milage],
+            "horsepower": [horsepower],
+            "displacement_l": [displacement_l],
+            "cylinders": [cylinders],
+            "is_turbo": [is_turbo],
+            "is_electric": [is_electric]
+        })
 
-    print(f"\nPredicted Used-Car Price: ${predicted_price:,.2f}")
+        predicted_price = model.predict(new_car)[0]
+        print(f"\nPredicted Used-Car Price: ${predicted_price:,.2f}")
+
+        result = new_car.copy()
+        result["predicted_price"] = predicted_price
+        extra_predictions.append(result)
+
+    if extra_predictions:
+        save_table(pd.concat(extra_predictions, ignore_index=True), "extra_car_predictions.csv")
+
     return df, model, y_test, y_pred, comparison
 
 

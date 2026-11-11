@@ -69,9 +69,11 @@ cd PROJECT-AI
 ```
 
 ### 2. Create and activate a virtual environment
-
+Activate it by 2nd command
 ```bash
 python -m venv venv
+
+.\venv\Scripts\Activate.ps1
 ```
 
 - **Command Prompt:** `venv\Scripts\activate`
